@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <title>Member Verification</title>
+
+    <style>
+      #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      #customers td,
+      #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      #customers tr:nth-child(n) {
+        background-color: #f2f2f2;
+      }
+
+      #customers tr:hover {
+        background-color: #ddd;
+      }
+
+      #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: #04aa6d;
+        color: white;
+      }
+
+      .center-drop {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <section id="header">
+      <div class="header container">
+        <div class="nav-bar">
+          <div class="brand">
+            <a href="#hero">
+              <h1><span> Vplus</span></h1>
+            </a>
+          </div>
+          <div class="nav-list">
+            <div class="hamburger">
+              <div class="bar"></div>
+            </div>
+            <ul>
+              <li><a href="/" data-after="Home">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Header -->
+
+    <!-- Hero Section  -->
+    <section id="hero">
+      <div class="hero container">
+        <table id="customers">
+          <tr>
+            <th>Request ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Guest House</th>
+            <th>Days of stay</th>
+            <th>ID Type</th>
+            <th>ID</th>
+
+            <th>Accepted/Decline</th>
+          </tr>
+          <% for(let request of requests){ %>
+          <tr>
+            <td><%= request._id %></td>
+            <td><%= request.name %></td>
+            <td><%= request.email %></td>
+            <td><%= request.age %></td>
+            <td><%= request.venue %></td>
+            <td><%= request.days %></td>
+            <td><%= request.idType %></td>
+            <td><%= request.idNumber %></td>
+            <td> 
+              <a  href="/accept/<%= request.id %>" >Accept </a>
+               <a  href="/reject/<%= request.id %>" >Reject </a>
+            </td>
+          </tr>
+          <% } %>
+        </table>
+      </div>
+    </section>
+  
+    <!-- End Hero Section  -->
+  </body>
+</html>

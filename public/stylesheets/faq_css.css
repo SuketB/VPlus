@@ -1,0 +1,111 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+
+h1 {
+    color: #212838;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: #EBD8C3;
+    font-size: 50px;
+    font-family: system-ui;
+
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    background-color: #EBD8C3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.container {
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.accord-item {
+    background-color: #283042;
+    border-radius: .8rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    box-shadow: .5rem 2px .5rem rgba(0, 0, 0, .2)
+}
+
+.accord-link {
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, .8);
+    text-decoration: none;
+    background-color: #283042;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+
+}
+
+.accord-link i {
+    color: #e7d5ff;
+    padding: .5rem;
+}
+
+.accord-link .ion-md-remove {
+    display: none;
+}
+
+.ans {
+    max-height: 0;
+    overflow: hidden;
+    position: relative;
+    background-color: #212838;
+    transition: max-height 650ms;
+}
+
+.ans::before {
+    content: "";
+    position: absolute;
+    width: .6rem;
+    height: 90%;
+    background-color: #F7E9D7;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+}
+
+.ans p {
+    color: white;
+    font-size: 1.4rem;
+    padding: 2rem;
+}
+
+.accord-item:target .ans {
+    max-height: 20rem;
+
+}
+
+.accord-item:target .accord-link .ion-md-add {
+    display: none;
+}
+
+.accord-item:target .accord-link .ion-md-remove {
+    display: block;
+}
